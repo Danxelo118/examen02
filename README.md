@@ -6,11 +6,11 @@ Votre mission est de reproduire fidèlement une interface Web interactive, en vo
 
 ## Instructions détaillées
 
-1. __Animation du personnage au chargement__ : Au démarrage de la page, animez le personnage en utilisant la technique d'animation « sprite » avec l'image `images/personnage/Idle.png`.
-1. __Interaction avec le bouton « Commencer »__ :
+* __Animation du personnage au chargement__ : Au démarrage de la page, animez le personnage en utilisant la technique d'animation « sprite » avec l'image `images/personnage/Idle.png`.
+* __Interaction avec le bouton « Commencer »__ :
   * Au clic du bouton, faites disparaître l'élément HTML avec l'id #controls.
   * Déclenchez la lecture en boucle de la piste sonore `audio/trame.mp3`.
-1. __Animation et effet parallax avec la touche `D`__ :
+* __Animation et effet parallax avec la touche `D`__ :
   * Lorsqu'on appui sur la lettre `D`, le personnage doit s'animer avec l'image `images/personnage/Run.png`.
   * Simultanément, créez un effet parallaxe avec les images de fond situées dans le dossier `images/parallax`.
   * Lorsque la touche `D` est relâchée, l'animation du personnage doit revenir à l'état `Idle` et l'effet parallax doit cesser.
