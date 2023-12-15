@@ -1,0 +1,214 @@
+/* ---------------------------------- */
+/* Général                            */
+/* ---------------------------------- */
+
+@font-face {
+  font-family: Alkhemikal;
+  src: url(fonts/Alkhemikal.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Monocraft;
+  src: url(fonts/Monocraft.ttf) format("truetype");
+}
+
+:root {
+  --dark: #11222c;
+  --sky-color: #da5e53;
+  --border: #683b4c;
+  --light: #cca594;
+  --hover: #cca594;
+  --active: #c78e76;
+}
+
+* {
+  image-rendering: pixelated;
+  font-family: Alkhemikal, Monocraft, sans-serif;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--dark);
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: var(--light);
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---------------------------------- */
+/* Parallax                           */
+/* ---------------------------------- */
+
+.parallax-container {
+  min-width: 592px;
+  width: 592px;
+  height: 272px;
+  margin: 1rem;
+  background: var(--sky-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-container::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  border: 2px solid var(--border);
+  z-index: 100;
+}
+
+@media screen and (min-width: 900px) {
+  .parallax-container {
+    transform: scale(1.5);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .parallax-container {
+    transform: scale(2);
+  }
+}
+
+/* ---------------------------------- */
+/* User interface                     */
+/* ---------------------------------- */
+
+#ui {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  font-family: Monocraft;
+}
+
+#ui:before,
+#ui:after {
+  color: var(--light);
+  font-size: 1rem;
+  position: absolute;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#ui:after {
+  content: "D ⏵";
+  top: 0;
+  left: 87%;
+}
+
+/* ---------------------------------- */
+/* Bouton                             */
+/* ---------------------------------- */
+
+#controls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+#controls:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: radial-gradient(closest-side, transparent, var(--dark));
+}
+
+#controls button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem 1.5rem;
+  background-color: var(--light);
+  border-radius: 999rem;
+  box-shadow: 0 0 1rem var(--dark);
+  z-index: 1001;
+  color: var(--dark);
+  cursor: pointer;
+  transition: all 0.1s;
+  border: none;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+#controls button:hover {
+  background-color: white;
+  letter-spacing: 2px;
+}
+
+#controls button:active {
+  background-color: var(--active);
+  letter-spacing: 2px;
+}
+
+/* ---------------------------------- */
+/* Parallax                           */
+/* ---------------------------------- */
+
+.parallax-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat-x;
+  border-radius: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#proche {
+  background-image: url("images/parallax/proche.png");
+}
+
+#centre {
+  background-image: url("images/parallax/centre.png");
+}
+
+#loin {
+  background-image: url("images/parallax/loin.png");
+}
+
+/* ---------------------------------- */
+/* Personnage                         */
+/* ---------------------------------- */
+
+#character {
+  background-size: cover;
+  background-image: url("images/personnage/Idle.png");
+  filter: contrast(66%);
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
