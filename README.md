@@ -24,6 +24,6 @@ Pour ce faire, vous devrez vous familiariser avec le code et les fichiers exista
 
 # Remise
 
-* Compresser l'ensemble des fichiers modifiés dans un fichier `.zip`
+* Compresser l'ensemble des documents dans un fichier `.zip`
 * Nommer le fichier `PRENOM_NOM_EX02_CSS.zip`
 * Déposer le fichier dans `Examen02` sur Teams
