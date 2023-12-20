@@ -185,21 +185,22 @@ h1 {
   height: 100%;
   transform: translateZ(0);
   transition: transform 0.5s ease-in-out;
+  animation: parallaxEffect 10s linear infinite;
 }
 
 #proche {
   background-image: url("images/parallax/proche.png");
-  animation: parallaxAnimation 5s linear infinite;
+  animation: parallaxAnimation 10s linear infinite;
 }
 
 #centre {
   background-image: url("images/parallax/centre.png");
-  animation: parallaxAnimation 7s linear infinite;
+
 }
 
 #loin {
   background-image: url("images/parallax/loin.png");
-  animation: parallaxAnimation 10s linear infinite;
+  
 }
 
 
@@ -208,7 +209,7 @@ h1 {
     transform: translateY(0);
   } 
   100% {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
  }
 
