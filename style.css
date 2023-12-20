@@ -215,8 +215,19 @@ h1 {
 }
 
 
+/* ... (existing styles) ... */
+
 #character.running {
-  background-image: url('images/personnage/Run.png');
+  animation: runAnimation 0.5s steps(8) infinite;
+}
+
+@keyframes runAnimation {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -2000px;
+  }
 }
 
 .parallax-container.running {
@@ -225,7 +236,7 @@ h1 {
 
 @keyframes parallaxAnimation {
   from {
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
   to {
     transform: translate(50px, 50px);
