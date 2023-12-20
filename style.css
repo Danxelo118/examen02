@@ -183,19 +183,35 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
+  transform: translateZ(0);
 }
 
 #proche {
   background-image: url("images/parallax/proche.png");
+  animation: parallaxAnimation 5s linear infinite;
 }
 
 #centre {
   background-image: url("images/parallax/centre.png");
+  animation: parallaxAnimation 7s linear infinite;
 }
 
 #loin {
   background-image: url("images/parallax/loin.png");
+  animation: parallaxAnimation 10s linear infinite;
 }
+
+
+@keyframes parallaxAnimation {
+  0% {
+    transform: translateY(0);
+  } 
+  100% {
+    transform: translateY(-50%);
+  }
+ }
+
+
 
 /* ---------------------------------- */
 /* Personnage                         */
@@ -226,3 +242,11 @@ h1 {
     background-position: -2000px 0;
   }
 }
+
+@keyframes runAnimation {
+  0% { background-position: 0 0;
+}
+100% {
+  background-position: --2000px 0;
+}
+ }
