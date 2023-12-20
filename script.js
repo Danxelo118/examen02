@@ -7,25 +7,35 @@
     function startBouton(){
     controls.style.display = 'none';
     audio.play();
+    startAnimation();
   };
     
   function startAnimation() {
+    
     character.style.backgroundImage = 'url("images/personnage/Idle.png")';
     character.classList.add('idle-animation');
-  }
-  document.addEventListener('keydown', startD);
+}
+
+
+  document.addEventListener('keydown', startD);   
   function startD(event) {
-    if ((event.key === 'D') || (event.key === 'd')) {
+    if (event.key === 'D' || event.key === 'd') {
         character.style.backgroundImage = 'url("images/personnage/Run.png")';
         character.classList.add('run-animation')
     }
   }
+
+
   document.addEventListener('keyup', stopD);
   function stopD(event) {
-    if ((event.key === 'D') || (event.key === 'd')) {
-        setTimeout(stopD, 1050);
+    if (event.key === 'D' || event.key === 'd') {
+        character.style.backgroundImage = 'url("images/personnage/Run.png")';
+        character.classList.remove('run-animation');
+        character.style.backgroundImage = 'url("images/personnage/Idle.png")';
+        character.classList.add('idle-animation');
   }
     }
+
 });
 
 
