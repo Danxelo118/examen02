@@ -211,34 +211,18 @@ h1 {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-
+  animation: idleAnimation 1s steps(8) infinite;
 }
 
 
 /* ... (existing styles) ... */
 
-#character.running {
-  animation: runAnimation 0.5s steps(8) infinite;
-}
 
-@keyframes runAnimation {
-  from {
-    background-position: 0;
+@keyframes idleAnimation {
+  0% {
+    background-position: 0 0;
   }
-  to {
-    background-position: -2000px;
-  }
-}
-
-.parallax-container.running {
-  animation: parallaxAnimation 0.5s ease-out;
-}
-
-@keyframes parallaxAnimation {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(50px, 50px);
+  100% {
+    background-position: -2000px 0;
   }
 }
