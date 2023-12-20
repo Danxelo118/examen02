@@ -13,12 +13,19 @@
     character.style.backgroundImage = 'url("images/personnage/Idle.png")';
     character.classList.add('idle-animation');
   }
+  document.addEventListener('keydown', startD);
   function startD(event) {
     if ((event.key === 'D') || (event.key === 'd')) {
-        startAnimation();
+        character.style.backgroundImage = 'url("images/personnage/Run.png")';
+        character.classList.add('run-animation')
     }
   }
-
+  document.addEventListener('keyup', stopD);
+  function stopD(event) {
+    if ((event.key === 'D') || (event.key === 'd')) {
+        setTimeout(stopD, 1050);
+  }
+    }
 });
 
 
