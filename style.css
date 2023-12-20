@@ -211,4 +211,23 @@ h1 {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
+
+}
+
+
+#character.running {
+  background-image: url('images/personnage/Run.png');
+}
+
+.parallax-container.running {
+  animation: parallaxAnimation 0.5s ease-out;
+}
+
+@keyframes parallaxAnimation {
+  from {
+    transform: translate(0,0);
+  }
+  to {
+    transform: translate(50px, 50px);
+  }
 }
