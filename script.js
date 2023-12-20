@@ -21,10 +21,15 @@
   function startD(event) {
     if (event.key === 'D' || event.key === 'd') {
         character.style.backgroundImage = 'url("images/personnage/Run.png")';
-        character.classList.add('run-animation')
+        character.classList.add('run-animation');
+        startParallax();
     }
   }
-
+  function startParallax() {
+    parallaxImages.array.forEach(image => {
+        image.style.transform ='translateY(-50%)';
+    });
+}
 
   document.addEventListener('keyup', stopD);
   function stopD(event) {
@@ -33,9 +38,19 @@
         character.classList.remove('run-animation');
         character.style.backgroundImage = 'url("images/personnage/Idle.png")';
         character.classList.add('idle-animation');
+        stopParallax();
   }
     }
 
+    function stopParallax() {
+        parallaxImages.array.forEach(image => {
+            image.style.transform = 'translateY(0)';
+        });
+    }
 });
+
+
+
+
 
 
