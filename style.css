@@ -202,7 +202,7 @@ h1 {
 
 #proche {
   background-image: url("images/parallax/proche.png");
-  
+
 }
 
 #centre {
@@ -212,18 +212,19 @@ h1 {
 
 #loin {
   background-image: url("images/parallax/loin.png");
-  
+
 }
 
 
 @keyframes parallaxAnimation {
   0% {
     transform: translateX(0);
-  } 
+  }
+
   100% {
     transform: translateX(-100%);
   }
- }
+}
 
 
 
@@ -258,25 +259,25 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  animation: runAnimation 1s steps(8) linear infinite ;
+  animation: runAnimation 1s steps(8) linear infinite;
 }
-
-/* ... (existing styles) ... */
-
 
 @keyframes idleAnimation {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: -2000px 0;
   }
 }
 
 @keyframes runAnimation {
-  0% { background-position: 0 0;
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -2000px 0;
+  }
 }
-100% {
-  background-position: -2000px 0;
-}
- }
