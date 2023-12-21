@@ -174,7 +174,7 @@ h1 {
 /* ---------------------------------- */
 
 .parallax-image {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: repeat-x;
   border-radius: 0px;
@@ -187,7 +187,7 @@ h1 {
 }
 
 .parallax-image.parallaxAnimation {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: repeat-x;
   border-radius: 0px;
