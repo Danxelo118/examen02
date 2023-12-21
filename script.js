@@ -2,10 +2,13 @@
     const character = document.getElementById('character');
     const audio = new Audio('audio/trame.mp3');
     const controls = document.getElementById('controls');
+    const parallaxImages = document.querySelectorAll('.parallax-image');
+    const parallaxContainer = document.querySelector('.parallax-container');
 
     document.querySelector('#controls button').addEventListener('click', startBouton);
     function startBouton(){
     controls.style.display = 'none';
+    audio.loop = true;
     audio.play();
     startAnimation();
   };
@@ -13,7 +16,7 @@
   function startAnimation() {
     
     character.style.backgroundImage = 'url("images/personnage/Idle.png")';
-    character.classList.add('idle-animation');
+    character.classList.add('IdleAnimation');
 }
 
 
@@ -21,33 +24,30 @@
   function startD(event) {
     if (event.key === 'D' || event.key === 'd') {
         character.style.backgroundImage = 'url("images/personnage/Run.png")';
-        character.classList.add('run-animation');
-        startParallax();
+        character.classList.add('runAnimation');
+        parallaxContainer.classList.add('parallaxAnimation');
+        parallaxImages.forEach((image) => {
+        image.classList.add('parallaxAnimation');
+    });
     }
   }
-  function startParallax() {
-    parallaxImages.array.forEach(image => {
-        image.style.transform ='translateY(-50%)';
-    });
-}
 
   document.addEventListener('keyup', stopD);
   function stopD(event) {
     if (event.key === 'D' || event.key === 'd') {
         character.style.backgroundImage = 'url("images/personnage/Run.png")';
-        character.classList.remove('run-animation');
+        character.classList.remove('runAnimation');
         character.style.backgroundImage = 'url("images/personnage/Idle.png")';
-        character.classList.add('idle-animation');
-        stopParallax();
-  }
+        character.classList.add('IdleAnimation');
+        parallaxContainer.classList.remove('parallaxAnimation');
+        parallaxImages.forEach((image) => {
+        image.classList.remove('parallaxAnimation');
+  });
     }
-
-    function stopParallax() {
-        parallaxImages.array.forEach(image => {
-            image.style.transform = 'translateY(0)';
-        });
-    }
+     }
 });
+
+
 
 
 
